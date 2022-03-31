@@ -1,0 +1,13 @@
+.elements {
+
+	max-width: 880px;
+	max-height: 744px;
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(2, 1fr);
+	grid-auto-rows: 282px 1fr;
+	gap: 17px;
+
+
+}

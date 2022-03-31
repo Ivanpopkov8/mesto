@@ -1,0 +1,15 @@
+.profile-info__title {
+	width: 100%;
+	height: auto;
+	max-height: 39px;
+	max-width: 294px;
+	color: #FFFFFF;
+	display: inline-block;
+	margin: 0 auto 16px;
+
+  font-style: normal;
+  font-weight: 500;
+  font-size: 42px;
+  line-height: 48px;
+	
+}

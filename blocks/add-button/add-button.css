@@ -1,0 +1,12 @@
+.add-button {
+	width: 100%;
+	height: auto;
+	max-height: 50px;
+  max-width: 150px;
+
+	border: 2px solid #FFFFFF;
+  box-sizing: border-box;
+  border-radius: 2px;
+
+	background: #000000;
+}

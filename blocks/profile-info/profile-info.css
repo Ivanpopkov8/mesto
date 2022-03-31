@@ -1,0 +1,10 @@
+.profile-info {
+
+	width: 100%;
+	height: auto;
+
+	max-width: 336px;
+  max-height: 73px;
+  margin: 0 275px 0 0;
+	text-align: center;
+}
