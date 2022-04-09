@@ -1,15 +1,10 @@
 .footer {
 	height: auto;
-/* display: flex; */
-/* width: 318px;
-height: 18px; */
-/* margin: 67px 762px 60px 200px; */
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 22px;
 
-font-family: 'Inter';
-font-style: normal;
-font-weight: 400;
-font-size: 18px;
-line-height: 22px;
-
-color: #545454;
+  color: #545454;
 }
