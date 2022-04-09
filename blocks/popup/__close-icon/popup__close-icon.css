@@ -11,4 +11,19 @@
 	background-repeat: no-repeat;
 	border: none;
 	cursor: pointer;
+	background-size: cover;
+	transition: 1s;
+}
+
+.popup__close-icon:hover {
+	opacity: 0.8;
+}
+
+@media screen and (max-width: 530px ) {
+.popup__close-icon {
+	width: 20px;
+	height: 20px;
+	top: -50px;
+	right: 0;
+}
 }

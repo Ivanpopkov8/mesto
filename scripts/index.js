@@ -18,7 +18,6 @@ popupBtn.addEventListener('click', toggleModalWindow);
 modalCloseBtn.addEventListener('click', toggleModalWindow);
 
 
-
 function titleModalWindow() {
 	nameInput.value = titleForInput.textContent;
 	surNameInput.value = subTitleForInput.textContent;

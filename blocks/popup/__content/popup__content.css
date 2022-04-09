@@ -12,3 +12,11 @@
 	display: flex;
 	flex-direction: column;
 }
+
+@media screen and (max-width: 450px) {
+.popup__content {
+	max-width: 282px;
+  max-height: 322px;
+	
+}
+}
