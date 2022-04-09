@@ -26,15 +26,6 @@ function titleModalWindow() {
 
 popupBtn.addEventListener('click', titleModalWindow);
 
-
-
-
-
-
-
-
-
-
 function onOverLayClick(event) {
 	if (event.target === event.currentTarget){
 		toggleModalWindow();
