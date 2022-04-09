@@ -1,0 +1,17 @@
+.element__vector {
+	height: 22px;
+	width: 19px;
+	background-image: url(../../../images/Vector-heart.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+	cursor: pointer;
+
+}
+
+.element__vector:hover {
+	opacity: 0.3;
+}
+
+
+

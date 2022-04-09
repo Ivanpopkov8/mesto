@@ -1,0 +1,11 @@
+.popup__filed-surname {
+	padding-bottom: 13px;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #000000;
+	font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+	outline: none;
+}

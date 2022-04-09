@@ -16,8 +16,6 @@
 
 				 <img class="header__logo" src="./images/Logo (1).svg" alt="Логотип сайта">
 
-				 <img class="header__line" src="./images/Line.png" alt="Разделительная линия">
-
 		</div>
 
 		<section class="profile">
@@ -26,43 +24,129 @@
 				<img class="profile__avatar-image" src="./images/Жак Ив Кусто.jpg" alt="Фото Жак-Ив Кусто">
 			</div>
 
+			<div class="profile__box">
+				
 			<div class="profile-info">
-				<div class="profile-info__edit-button">
-					<h1 class="profile-info__title">Жак-Ив Кусто</h1>
-					<button class="profile-info__rectangle"><img src="./images/Vector.png" alt="Вектор"></button>
-					<h2 class="profile-info__subtitle">Исследователь океана</h2>
-					
 
+				<div class="profile-info__edit-button">
+
+					<h1 class="profile-info__title">Жак-Ив Кусто</h1>
+					<button class="profile-info__button" type="button"><img src="./images/Vector.png" alt="Вектор"></button>
 				</div>
+				<h2 class="profile-info__subtitle">Исследователь океана</h2>
 			</div>
 			
-			<button class="add-button"><img src="./images/VectorPlus (1).png" alt="Вектор плюс"></button>
-
+			<button class="add-button" type="button"><img src="./images/VectorPlus (1).png" alt="Вектор плюс"></button>
+		</div>
 		</section>
 
 		<section class="elements">
-			
-			<div class="element">
-			  <img class="element__image" src="./images/Karachaevo2.png" alt="Вид на замок на фоне Карачаевских гор">
-		  </div>
 
-			<img class="element" src="./images/Elbrus.png" alt="Вид на предгорный холмы на фоне горы Эльбрус">
-			<img class="element" src="./images/Dombay.png" alt="Вид лесных и скалистых гор горнолыжного курорта Домбай">
-			<img class="element" src="./images/Elbrus.png" alt="Вид на предгорный холмы на фоне горы Эльбрус">
-			<img class="element" src="./images/Dombay.png" alt="Вид лесных и скалистых гор горнолыжного курорта Домбай">
-			<img class="element" src="./images/Karachaevo2.png" alt="Вид на замок на фоне Карачаевских гор">
+			<div class="element">
+
+				<img class="element__image" src="./images/Karachaevo2.png" alt="Вид на замок на фоне Карачаевских гор">
+				
+	
+				<div class="element__content">
+						 <h3 class="element__title">Карачаевск</h3>
+						<div class="element__vector"></div>
+				</div>
+					
+			</div>
+
+			<div class="element">
+
+					<img class="element__image" src="./images/Elbrus.png" alt="Вид на замок на фоне Карачаевских гор">
+					
+		
+					<div class="element__content">
+							 <h3 class="element__title">Гора Эльбрус</h3>
+							 <div class="element__vector">
+						 </div>
+					</div>
+						
+			</div>
+
+			<div class="element">
+
+						<img class="element__image" src="./images/Dombay.png" alt="Вид на замок на фоне Карачаевских гор">
+						
+			
+						<div class="element__content">
+								 <h3 class="element__title">Домбай</h3>
+								 <div class="element__vector"> 
+							 </div>
+						</div>
+							
+			</div>
+
+			<div class="element">
+
+							<img class="element__image" src="./images/Elbrus.png" alt="Вид на замок на фоне Карачаевских гор">
+							
+				
+							<div class="element__content">
+									 <h3 class="element__title">Гора Эльбрус</h3>
+									 <div class="element__vector"> 
+								 </div>
+							</div>
+								
+			</div>
+
+			<div class="element">
+
+			<img class="element__image" src="./images/Dombay.png" alt="Вид на замок на фоне Карачаевских гор">
+			
+
+			<div class="element__content">
+				   <h3 class="element__title">Домбай</h3>
+				   <div class="element__vector">
+				 </div>
+			</div>
+				
+		</div>
+
+			<div class="element">
+
+				<img class="element__image" src="./images/Karachaevo2.png" alt="Вид на замок на фоне Карачаевских гор">
+				
+	
+				<div class="element__content">
+						 <p3 class="element__title">Карачаево-Черкесия</p3>
+						 <div class="element__vector">
+					 </div>
+				</div>
+					
+			</div>
+
+			
 
 	  </section>
 
 		<footer class="footer">
-
+      <p class="footer__paragraph"> &copy; 2020 Mesto Russia</p>
 		</footer>
-
-
-
 		
+<div class="popup">
+
+	<div class="popup__content">
+		<button class="popup__close-icon" type="button"></button>
+
+		<h3 class="popup__header">Редактировать профиль</h3>
+	
+		
+	  <form class="pupup__form">
+		  <input type="text" name="username" value="" class="popup__filed-name" />
+		  <input type="text" name="username" value="" class="popup__filed-surname" />
+
+		  <button class="popup__submit-button" type="submit">Сохранить</button>
+	  </form>
+	
+</div>
+
+</div>
 
 	</div>
-
+<script src="./scripts/index.js"></script>
 </body>
 </html>

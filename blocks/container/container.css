@@ -1,5 +1,35 @@
 .container {
     width: 100%;
     max-width: 1280px;
+		margin: 0 auto 0;
 
 }
+
+@media (max-width: 1280px) {
+	.container {
+		max-width: 68.75%;
+	}
+}
+
+@media (max-width: 1000px) {
+	.container {
+		max-width: 80%;
+	}
+}
+
+@media (max-width: 1000px) {
+	.container {
+		max-width: 90%;
+	}
+}
+
+@media (max-width: 730px) {
+	.container {
+		max-width: 95%;
+	}
+}
+
+
+
+
+

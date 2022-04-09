@@ -9,4 +9,18 @@
   border-radius: 2px;
 
 	background: #000000;
+	transition: 1s;
 }
+
+.add-button:hover {
+  opacity: 0.3;
+}
+
+
+		@media screen and (max-width: 700px) {
+			.add-button {
+			max-width: 100%;
+			min-height: 50px;
+			}
+			
+			}
