@@ -1,5 +1,5 @@
 .pupup__form {
 	display: flex;
 	box-sizing: border-box;
-	flex-direction: column
+	flex-direction: column;
 }
