@@ -1,7 +1,8 @@
 .element {
 	  max-width: 100%;
     height: auto;
-		background-color: aliceblue;
+		background-color: #FFFFFF;
 		border-radius: 10px;
 		overflow: hidden;
+		
 }

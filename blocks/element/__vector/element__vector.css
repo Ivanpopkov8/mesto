@@ -2,11 +2,14 @@
 	height: 22px;
 	width: 19px;
 	background-image: url(../../../images/Vector-heart.svg);
+	background-color:#fff;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;
 	cursor: pointer;
 	transition: 1s;
+	margin: 0;
+	border: none;
 }
 
 .element__vector:hover {
