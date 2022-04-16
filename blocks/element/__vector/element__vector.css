@@ -1,6 +1,6 @@
 .element__vector {
-	height: 22px;
 	width: 19px;
+	height: auto;
 	background-image: url(../../../images/Vector-heart.svg);
 	background-color:#fff;
 	background-repeat: no-repeat;
@@ -10,6 +10,7 @@
 	transition: 1s;
 	margin: 0;
 	border: none;
+	padding: 0;
 }
 
 .element__vector:hover {

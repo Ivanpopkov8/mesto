@@ -4,8 +4,8 @@ const modalCloseBtn = modalWindow.querySelector('.popup__close-icon');
 const formBoxElement = document.querySelector('.popup__form');
 const titleForInput = document.querySelector('.profile-info__title');
 const subTitleForInput = document.querySelector('.profile-info__subtitle');
-const nameInput = document.querySelector('.popup__filed-name_one_input');
-const surNameInput = document.querySelector('.popup__filed-name_two_input');
+const nameInput = document.querySelector('.popup__filed-name_input_name');
+const surNameInput = document.querySelector('.popup__filed-name_input_surname');
 // const whiteHеartIcon = document.querySelectorAll('.element__vector');
 
 function toggleModalWindow() {
@@ -17,12 +17,12 @@ popupBtn.addEventListener('click', toggleModalWindow);
 modalCloseBtn.addEventListener('click', toggleModalWindow);
 
 
-function titleModalWindow() {
+function handleLikeButton() {
 	nameInput.value = titleForInput.textContent;
 	surNameInput.value = subTitleForInput.textContent;
 	}
 
-popupBtn.addEventListener('click', titleModalWindow);
+popupBtn.addEventListener('click', handleLikeButton);
 
 function onOverLayClick(event) {
 	if (event.target === event.currentTarget){
