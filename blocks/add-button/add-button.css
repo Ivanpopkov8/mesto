@@ -1,6 +1,6 @@
 .add-button {
 	width: 100%;
-	height: auto;
+	height: 50px;
 	max-height: 50px;
   max-width: 150px;
 	border: 2px solid #FFFFFF;
@@ -12,7 +12,7 @@
 }
 
 .add-button:hover {
-  opacity: 0.3;
+  opacity: 0.6;
 }
 
 

@@ -17,12 +17,12 @@ popupBtn.addEventListener('click', toggleModalWindow);
 modalCloseBtn.addEventListener('click', toggleModalWindow);
 
 
-function handleLikeButton() {
+function addInputContent() {
 	nameInput.value = titleForInput.textContent;
 	surNameInput.value = subTitleForInput.textContent;
 	}
 
-popupBtn.addEventListener('click', handleLikeButton);
+popupBtn.addEventListener('click', addInputContent);
 
 function onOverLayClick(event) {
 	if (event.target === event.currentTarget){

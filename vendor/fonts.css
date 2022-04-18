@@ -8,12 +8,12 @@
 }
 
 @font-face {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 500;
-	font-display: swap;
-	src: url("./fonts/Inter-Black.ttf") format("ttf"),
-	url("./fonts/Inter-Regular.ttf") format("ttf");
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  src: local(''),
+       url('./fonts/inter-v8-latin_cyrillic-regular.woff2') format('woff2'),
+       url('./fonts/inter-v8-latin_cyrillic-regular.woff') format('woff');
 }
 
 
