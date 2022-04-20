@@ -8,3 +8,9 @@
   font-size: 14px;
   line-height: 17px;
 }
+
+@media screen and (max-width: 550px) {
+	.popup__filed-name:nth-child(2) {
+		margin-bottom: 45px;
+	}
+	}

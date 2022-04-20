@@ -1,24 +1,25 @@
 .header {
 margin:  45px auto 36.25px;
-border-bottom: 1px solid rgba(84, 84, 84, 0.7);
 position: relative;
 }
 
+.header::after {
+	content: "";
+	position: absolute;
+	height: 1px;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: rgba(84, 84, 84, 0.7);
 
-
+}
 
 @media screen and (max-width: 550px) {
 	.header {
-		border-bottom: 0;
+		margin-bottom: 38.25px;
 	}
 	.header::after {
-		content: "";
-		position: absolute;
-		height: 1px;
 		left: -2.5%;
 		right: -2.5%;
-		bottom: 0;
-		background: rgba(84, 84, 84, 0.7);
-
 	}
 }

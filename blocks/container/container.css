@@ -17,9 +17,9 @@
 	}
 }
 
-@media (max-width: 730px) {
+@media (max-width: 550px) {
 	.container {
-		max-width: 95%;
+		max-width: 88.125%;
 	}
 }
 

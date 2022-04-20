@@ -7,16 +7,16 @@
 	background-color: #fff;
 	color: #000;
 	box-sizing: border-box;
-	border-radius: 15px;
+	border-radius: 10px;
 	margin: 195px auto;
 	display: flex;
 	flex-direction: column;
 }
 
-@media screen and (max-width: 450px) {
+@media screen and (max-width: 550px) {
 .popup__content {
 	max-width: 282px;
   max-height: 322px;
-	
+	padding: 25px 22px;
 }
 }
