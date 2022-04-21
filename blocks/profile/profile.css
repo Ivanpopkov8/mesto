@@ -10,3 +10,9 @@
 		justify-content: center;
 }
 }
+
+@media screen and (max-width: 550px) {
+	.profile {
+		margin-bottom: 36px;
+}
+}

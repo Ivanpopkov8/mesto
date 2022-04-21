@@ -17,9 +17,10 @@ position: relative;
 @media screen and (max-width: 550px) {
 	.header {
 		margin-bottom: 38.25px;
+		margin-top: 28px;
 	}
 	.header::after {
-		left: -2.5%;
-		right: -2.5%;
+		left: -6%;
+		right: -6%;
 	}
 }

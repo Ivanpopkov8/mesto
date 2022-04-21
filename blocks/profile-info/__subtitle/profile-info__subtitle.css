@@ -9,12 +9,12 @@
 	text-overflow: ellipsis;
 	white-space: nowrap;
 	overflow: hidden;
-	max-width: 336px;
 }
 
 @media screen and (max-width: 700px) {
 	.profile-info__subtitle {
 		text-align: center;
+		margin-right: 0;
 	}
 }
 

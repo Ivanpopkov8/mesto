@@ -1,4 +1,12 @@
 .profile-info {
-	width: 100%;
-	height: auto;
+	display: block;
+	
+}
+
+
+@media screen and (max-width: 550px) {
+
+	.profile-info {
+		width: 282px;
+	}
 }
