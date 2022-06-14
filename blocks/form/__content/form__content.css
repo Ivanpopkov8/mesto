@@ -1,0 +1,22 @@
+.form__content {
+	width: 100%;
+	max-width: 430px;
+  min-height: 330px;
+	position: relative;
+	padding: 34px 36px 37px;
+	background-color: #fff;
+	color: #000;
+	box-sizing: border-box;
+	border-radius: 10px;
+	margin: 195px auto;
+	display: flex;
+	flex-direction: column;
+}
+
+@media screen and (max-width: 550px) {
+.form__content {
+	max-width: 282px;
+  max-height: 322px;
+	padding: 25px 22px;
+}
+}

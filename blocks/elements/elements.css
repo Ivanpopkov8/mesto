@@ -1,5 +1,5 @@
 .elements {
-	margin: 0 auto;
+	margin: 0 10px 0;
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	grid-auto-rows: 1fr;
