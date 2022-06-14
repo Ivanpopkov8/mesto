@@ -142,10 +142,10 @@ const modalWindowPlace = document.querySelector('.form');
 
 const addButtonPlace = document.querySelector(".add-button");
 
-function toggleModalWindowPlace() {
+function toggleModalWindow() {
 	modalWindowPlace.classList.toggle('form_is-active');
 	}
-	addButtonPlace.addEventListener('click', toggleModalWindowPlace);
+	addButtonPlace.addEventListener('click', toggleModalWindow);
 
 // Функция закрытия попап крестик
 	const formCloseBtn = modalWindowPlace.querySelector('.form__close-icon');
