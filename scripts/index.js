@@ -129,6 +129,7 @@ whiteHеartIcon.forEach(
 
 // Работа над добовление 2го попапа
 
+
 const formBox = document.querySelector('.form__popup');
 
 const placeInput = document.querySelector('.form__filed-name_input_place');
@@ -149,7 +150,7 @@ function toggleModalWindow() {
 
 // Функция закрытия попап крестик
 	const formCloseBtn = modalWindowPlace.querySelector('.form__close-icon');
-	formCloseBtn.addEventListener('click', toggleModalWindowPlace);
+	formCloseBtn.addEventListener('click', toggleModalWindow);
 
 	// Функция закрытия попап на любое место экрана
 
