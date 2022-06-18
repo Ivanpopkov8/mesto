@@ -42,8 +42,9 @@
 
 			<section>
 
-					<ul class="elements">
-					</ul>
+				<ul class="elements">
+					
+				</ul>
 
 			</section>
 
@@ -62,7 +63,8 @@
 
 				<form name="submet-form" class="popup__form">
 					<input required type="text" name="username" value="" class="popup__filed-name popup__filed-name_input_name" />
-					<input required type="text" name="usersurname" value="" class="popup__filed-name popup__filed-name_input_surname" />
+					<input required type="text" name="usersurname" value=""
+						class="popup__filed-name popup__filed-name_input_surname" />
 					<button class="popup__submit-button" type="submit">Сохранить</button>
 				</form>
 
@@ -78,8 +80,10 @@
 				<h3 class="form__header">Новое место</h3>
 
 				<form name="form-submet" class="form__popup">
-					<input required type="text" name="placename" value="Название" class="form__filed-name form__filed-name_input_place" />
-					<input required type="text" name="link" value="Ссылка на картинку" class="form__filed-name form__filed-name_input_link" />
+					<input required type="text" name="placename" value="Название"
+						class="form__filed-name form__filed-name_input_place" />
+					<input required type="text" name="link" value="Ссылка на картинку"
+						class="form__filed-name form__filed-name_input_link" />
 					<button class="form__submit-button" type="submit">Создать</button>
 				</form>
 
@@ -87,18 +91,26 @@
 
 		</div>
 
+		<div class="image-popup">
+			<div class="image-popup__inner">
+      <img class="image-popup__pic" src="" alt="" />
+			<h4 class="image-popup__image-title"></h4>
+      <button class="image-popup__close-icon" type="button"></button>
+		</div>
+
+
 	</div>
 
-<template id="element-template">
-	<li class="element">
-		<img class="element__image" src="" alt="picture">
-		<div class="element__content">
-			<h2 class="element__title"></h2>
-			<!-- <button class="element__basket" type="button"></button> -->
-			<button type="button" class="element__vector"></button>
-		</div>
-	</li>
-</template>
+	<template id="element-template">
+		<li class="element">
+			<img class="element__image" src="" alt="picture">
+			<button class="element__basket" type="button"></button>
+			<div class="element__content">
+				<h2 class="element__title"></h2>
+				<button type="button" class="element__vector"></button>
+			</div>
+		</li>
+	</template>
 
 	<script src="./scripts/index.js"></script>
 </body>

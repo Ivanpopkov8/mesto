@@ -1,5 +1,4 @@
-.popup {
-	/* display: none; */
+.image-popup{
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -9,7 +8,8 @@
 	bottom: 0;
 	left: 0;
 	right: 0;
+	z-index: 10;
 	opacity: 0;
-	transition: 0.5s;
+	transition: 1s;
 	visibility: hidden;
 }

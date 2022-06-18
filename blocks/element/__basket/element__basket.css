@@ -1,8 +1,13 @@
 .element__basket {
-	width: 19px;
-	height: auto;
-	background-image: url(../../../images/Vector-heart.svg);
-	background-color:#fff;
+  position: absolute;
+	display: block;
+  width: 18px;
+  height:19px;
+	top: 20px;
+	right: 20px;
+	z-index: 5;
+	background-image: url(../../../images/Trash.svg);
+	background-color: transparent;
 	background-repeat: no-repeat;
 	background-size: contain;
 	background-position: center;

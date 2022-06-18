@@ -1,3 +1,10 @@
 .popup_is-active {
-  display: block;
+	opacity: 1;
+	transition: 0.5s;
+	visibility: visible;
 }
+
+/* .popup_is-active .popup__content {
+  transition: 1s;
+	visibility: visible;
+} */
