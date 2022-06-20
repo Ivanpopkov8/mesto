@@ -33,9 +33,9 @@ const popupFormePlace = document.querySelector('.popup__form-place');
 // Третий попап
 const popupShowImg = document.querySelector('.popup-show-img');
 
-const imagePopupPic = popupShowImg.querySelector('.image-popup__pic');
+const imagePopupPic = popupShowImg.querySelector('.popup__image-pic');
 
-const imagePopupTitle = document.querySelector('.image-popup__image-title');
+const imagePopupTitle = document.querySelector('.popup__image-title');
 
 const popupImgCloseBtn = popupShowImg.querySelector('.popup__close-icon');
 
@@ -58,6 +58,7 @@ function clolsePopup(popupItem) {
 	popupItem.classList.remove('popup_is-active');
 
 };
+
 
 //Клик по кнопке popupBtnPen
 popupBtnPen.addEventListener('click', function () {
@@ -169,11 +170,11 @@ function createCard(item) {
 
 		openPopup(popupShowImg);
 
-		popupShowImg.querySelector('.image-popup__image-title').textContent = item.name;
+		popupShowImg.querySelector('.popup__image-title').textContent = item.name;
 
-	  popupShowImg.querySelector('.image-popup__pic').src = cardImage.getAttribute('src');
+	  popupShowImg.querySelector('.popup__image-pic').src = cardImage.getAttribute('src');
 
-		popupShowImg.querySelector(".image-popup__pic").alt = item.name;
+		popupShowImg.querySelector(".popup__image-pic").alt = item.name;
 	} )
  
 	return cardElement
