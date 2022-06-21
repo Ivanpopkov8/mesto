@@ -35,12 +35,9 @@ const popupShowImg = document.querySelector('.popup-show-img');
 
 const imagePopupPic = popupShowImg.querySelector('.popup__image-pic');
 
-// const imagePopupTitle = document.querySelector('.popup__image-title');
-
 const imagePopupTitle = popupShowImg.querySelector('.popup__image-title');
 
 const popupImgCloseBtn = popupShowImg.querySelector('.popup__close-icon');
-
 
 
 // Работа с карточками
@@ -60,7 +57,6 @@ function clolsePopup(popupItem) {
 	popupItem.classList.remove('popup_is-active');
 
 };
-
 
 //Клик по кнопке popupBtnPen
 popupBtnPen.addEventListener('click', function () {
