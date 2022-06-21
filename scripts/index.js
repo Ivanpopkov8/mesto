@@ -35,7 +35,9 @@ const popupShowImg = document.querySelector('.popup-show-img');
 
 const imagePopupPic = popupShowImg.querySelector('.popup__image-pic');
 
-const imagePopupTitle = document.querySelector('.popup__image-title');
+// const imagePopupTitle = document.querySelector('.popup__image-title');
+
+const imagePopupTitle = popupShowImg.querySelector('.popup__image-title');
 
 const popupImgCloseBtn = popupShowImg.querySelector('.popup__close-icon');
 
@@ -170,11 +172,12 @@ function createCard(item) {
 
 		openPopup(popupShowImg);
 
-		popupShowImg.querySelector('.popup__image-title').textContent = item.name;
+		imagePopupTitle.textContent = item.name;
 
-	  popupShowImg.querySelector('.popup__image-pic').src = cardImage.getAttribute('src');
+	  imagePopupPic.src = item.link;
 
-		popupShowImg.querySelector(".popup__image-pic").alt = item.name;
+		imagePopupPic.alt = item.name;
+
 	} )
  
 	return cardElement
