@@ -54,23 +54,59 @@
 			<p class="footer__paragraph"> &copy; 2020 Mesto Russia</p>
 		</footer>
 
+
 		<div class="popup popup-edit-profile">
 
 			<div class="popup__content">
+
 				<button class="popup__close-icon" type="button"></button>
 
 				<h3 class="popup__header">Редактировать профиль</h3>
 
-				<form name="submet-profile" class="popup__form popup__form-profile">
-					<input required type="text" name="username" value="" class="popup__filed-name popup__filed-name_input_name" />
-					<input required type="text" name="usersurname" value=""
-						class="popup__filed-name popup__filed-name_input_surname" />
-					<button class="popup__submit-button" type="submit">Сохранить</button>
+				<form name="submet-profile" class="popup__form popup__form-profile" id="form" novalidate>
+
+					<fieldset class="popup__fields" id="popup__id-fields">
+
+					<input 
+					type="text" 
+					id="name-input"
+					placeholder="Имя"
+					minlength="2"
+					maxlength="40"
+					name="username" 
+					value="" 
+					class="popup__field-name popup__field-name_input_name" 
+					required/>
+
+					<span class="name-input-error popup__input-error"></span>
+
+					<input
+					type="text" 
+					id="surname-input"
+					placeholder="О себе"
+					minlength="2"
+          maxlength="200"
+					name="usersurname" 
+					value=""
+					class="popup__field-name popup__field-name_input_surname" 
+					required/>
+
+					<span class="surname-input-error popup__input-error popup__input-error_next_place"></span>
+
+				</fieldset>
+
+					<button 
+					class="popup__submit-button" name="popup__save" type="submit">Сохранить</button>
+					
 				</form>
 
 			</div>
 
 		</div>
+
+
+
+
 
 		<div class="popup popup-add-place">
 
@@ -79,12 +115,38 @@
 
 				<h3 class="popup__header">Новое место</h3>
 
-				<form name="submet-place" class="popup__form popup__form-place">
-					<input required type="text" name="placename" value="Название"
-						class="popup__filed-name popup__filed-name_input_place" />
-					<input required type="text" name="link" value="Ссылка на картинку"
-						class="popup__filed-name popup__filed-name_input_link" />
-					<button class="popup__submit-button" type="submit">Создать</button>
+				<form name="submet-place" class="popup__form popup__form-place" id="form-place" novalidate>
+
+					<fieldset class="popup__fields" id="popup__id-fields">
+
+					<input  
+					type="text"
+					id="place-input"
+					placeholder="Название"
+					minlength="2"
+          maxlength="30"
+					name="placename"
+					value=""
+					class="popup__field-name popup__field-name_input_place"
+					required />
+
+					<span class="place-input-error popup__input-error popup__input-error"></span>
+
+					<input 
+					type="url" 
+					id="url-input"
+					placeholder="Ссылка на картинку"
+					name="link" 
+					value=""
+					class="popup__field-name popup__field-name_input_link" 
+					required />
+         
+					<span class="url-input-error popup__input-error popup__input-error_next_place"></span>
+
+				</fieldset>
+
+					<button class="popup__submit-button" name="popup__create" type="submit">Создать</button>
+
 				</form>
 
 			</div>
@@ -112,7 +174,12 @@
 		</li>
 	</template>
 
+	<script src="./scripts/validate.js"></script>
+
 	<script src="./scripts/index.js"></script>
+
+	
+
 </body>
 
 </html>

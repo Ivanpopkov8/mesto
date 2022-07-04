@@ -1,0 +1,32 @@
+.popup__field-name {
+	padding-bottom: 13px;
+	margin-bottom: 5px;
+	border: none;
+	border-bottom: 1px solid #000000;
+	font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+/* .popup__filed-name:hover {
+  border-bottom-color: #000;
+}
+
+.popup__filed-name:focus {
+  border-bottom-color: #007DFF;
+}
+
+.popup__filed-name:invalid {
+  border-bottom: 1px solid red;
+} 
+
+.popup__filed-name:valid {
+  border-bottom: 1px solid green; 
+}  */
+
+@media screen and (max-width: 550px) {
+	.popup__field-name:nth-child(2) {
+		margin-bottom: 45px;
+	}
+	}

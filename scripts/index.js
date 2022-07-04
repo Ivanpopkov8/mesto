@@ -1,4 +1,3 @@
-//Кнопка редактировать профиль
 
 // Первый попап
 const popupBtnPen = document.querySelector('.profile-info__button');
@@ -11,9 +10,9 @@ const titleForInput = document.querySelector('.profile-info__title');
 
 const subTitleForInput = document.querySelector('.profile-info__subtitle');
 
-const nameInput = document.querySelector('.popup__filed-name_input_name');
+const nameInput = document.querySelector('.popup__field-name_input_name');
 
-const surNameInput = document.querySelector('.popup__filed-name_input_surname');
+const surNameInput = document.querySelector('.popup__field-name_input_surname');
 
 const popupFormeProfile = document.querySelector('.popup__form-profile');
 
@@ -24,9 +23,9 @@ const popupAddPlace = document.querySelector('.popup-add-place');
 
 const popupPlaceCloseBtn = popupAddPlace.querySelector('.popup__close-icon');
 
-const popupPlaceInput = document.querySelector('.popup__filed-name_input_place');
+const popupPlaceInput = document.querySelector('.popup__field-name_input_place');
 
-const popupLinkInput = document.querySelector('.popup__filed-name_input_link');
+const popupLinkInput = document.querySelector('.popup__field-name_input_link');
 
 const popupFormePlace = document.querySelector('.popup__form-place');
 
@@ -53,7 +52,7 @@ function openPopup(popupItem) {
 };
 
 // Функция закрыть  попап
-function clolsePopup(popupItem) {
+function clolsePopup (popupItem) {
 	popupItem.classList.remove('popup_is-active');
 
 };
@@ -283,3 +282,21 @@ function onOverLayImage(event) {
 popupShowImg.addEventListener('click', onOverLayImage);
 
 
+// 34:18 подтягивает текст об ошибки инпута
+// 38:30 класс для инвалид и там же код
+// 41:05 Кнопка блакируется есл инпут инвалид
+// 48:58 Требование проектной работы
+//59
+
+
+// Закрыть по ESC
+window.onkeydown = function( event ) {
+	if ( event.keyCode == 27 ) {
+
+			clolsePopup(popupAddPlace)
+			clolsePopup(popupEditProfile)
+			clolsePopup(popupShowImg)
+		
+	}
+
+};

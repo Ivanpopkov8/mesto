@@ -1,4 +1,4 @@
-.popup__filed-name {
+.form__field-name {
 	padding-bottom: 13px;
 	margin-bottom: 30px;
 	border: none;
@@ -10,7 +10,7 @@
 }
 
 @media screen and (max-width: 550px) {
-	.popup__filed-name:nth-child(2) {
+	.form__field-name:nth-child(2) {
 		margin-bottom: 45px;
 	}
 	}
