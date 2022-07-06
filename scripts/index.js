@@ -39,23 +39,52 @@ const imagePopupTitle = popupShowImg.querySelector('.popup__image-title');
 const popupImgCloseBtn = popupShowImg.querySelector('.popup__close-icon');
 
 
+
+
+
 // Работа с карточками
 //Получаю ul
 const elementsContainer = document.querySelector('.elements');
 //Получаю шаблон по id
 const elementsTempl = document.querySelector('#element-template').content;
 
+
+
+function closeByEscape(evt) {
+
+	console.log(evt.key);
+
+	if (evt.key === 'Escape') {
+
+		const openedPopup = document.querySelector('.popup_is-active')
+
+		closePopup(openedPopup)
+
+	}
+
+};
+
+
 // функция открыть попап
 function openPopup(popupItem) {
 	popupItem.classList.add('popup_is-active');
 
+	document.addEventListener('keyup', closeByEscape);
+
 };
+
+
 
 // Функция закрыть  попап
-function clolsePopup (popupItem) {
+function closePopup(popupItem) {
 	popupItem.classList.remove('popup_is-active');
 
+	document.removeEventListener('keyup', closeByEscape);
+
 };
+
+
+
 
 //Клик по кнопке popupBtnPen
 popupBtnPen.addEventListener('click', function () {
@@ -72,7 +101,7 @@ popupBtnPen.addEventListener('click', function () {
 // Закрываем попап по клику на popupProfileCloseBtn
 popupProfileCloseBtn.addEventListener('click', function () {
 
-	clolsePopup(popupEditProfile);
+	closePopup(popupEditProfile);
 
 });
 
@@ -87,7 +116,7 @@ popupFormeProfile.addEventListener('submit', function (evt) {
 	titleForInput.textContent = nameInput.value;
 	subTitleForInput.textContent = surNameInput.value;
 
-	clolsePopup(popupEditProfile);
+	closePopup(popupEditProfile);
 
 });
 
@@ -108,7 +137,7 @@ const initialCards = [
 		name: 'Иваново',
 		link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
 	},
-	
+
 	{
 		name: 'Камчатка',
 		link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/kamchatka.jpg'
@@ -126,19 +155,22 @@ const initialCards = [
 
 ];
 
+
 // Функция создания карточки
 
 function createCard(item) {
 
-// Клонируем каждый ли ула в шаблон
+	// Клонируем каждый ли ула в шаблон
 	const cardElement = elementsTempl.querySelector('.element').cloneNode(true);
 
-//Запиши в ли -.element__title то что у нас в item.name;
+	const cardElementImage = cardElement.querySelector(".element__image");
+
+	//Запиши в ли -.element__title то что у нас в item.name;
 	cardElement.querySelector(".element__title").textContent = item.name;
 
-	cardElement.querySelector(".element__image").src = item.link;
+	cardElementImage.src = item.link;
 
-	cardElement.querySelector(".element__image").alt = item.name;
+	cardElementImage.alt = item.name;
 
 	// Доступ к сердечку по heart
 	const heart = cardElement.querySelector('.element__vector');
@@ -146,12 +178,10 @@ function createCard(item) {
 	// Доступ к корзине по basketTrash
 	const basketTrash = cardElement.querySelector('.element__basket');
 
-	const cardImage = cardElement.querySelector('.element__image');
-
-// Клик по сердцу - срабатывает функция addLike
+	// Клик по сердцу - срабатывает функция addLike
 	heart.addEventListener('click', function () {
 
-		addLike(heart);
+		toggleLike(heart);
 
 	});
 
@@ -163,26 +193,29 @@ function createCard(item) {
 	});
 
 	// Срабатывает клик по картинки - открываем попап - добовляем контент
-	cardImage.addEventListener('click', function() {
+	cardElementImage.addEventListener('click', function () {
 
 		openPopup(popupShowImg);
 
 		imagePopupTitle.textContent = item.name;
 
-	  imagePopupPic.src = item.link;
+		imagePopupPic.src = item.link;
 
 		imagePopupPic.alt = item.name;
 
-	} )
- 
+	})
+
 	return cardElement
 }
 
 // Функция клика по like
 
-function addLike(heartIcon) {
+function toggleLike(heartIcon) {
 	heartIcon.classList.toggle('element__vector_active')
 }
+
+
+
 
 // Функция удаления карточек
 function deleteCard(trashCard) {
@@ -192,24 +225,26 @@ function deleteCard(trashCard) {
 
 // Метод обхода всех карточек
 
-function printCard(card) {
+function renderCard(card) {
 	elementsContainer.prepend(card)
-} 
+}
 
-function copyCard() {
+// Функция отрсовываете начальные карточки
+
+function renderInitialCards() {
 	initialCards.forEach(function (item) {
 		const cardItem = createCard(item)
-		printCard(cardItem)
+		renderCard(cardItem)
 	});
 }
 
-copyCard();
+renderInitialCards();
 
 // Функция крестик закрывает картинку
-popupImgCloseBtn.addEventListener('click', function() {
+popupImgCloseBtn.addEventListener('click', function () {
 
-		clolsePopup(popupShowImg);
-	})
+	closePopup(popupShowImg);
+})
 
 addButtonPlace.addEventListener('click', function () {
 
@@ -219,7 +254,7 @@ addButtonPlace.addEventListener('click', function () {
 
 popupPlaceCloseBtn.addEventListener('click', function () {
 
-	clolsePopup(popupAddPlace);
+	closePopup(popupAddPlace);
 
 });
 
@@ -236,67 +271,32 @@ popupFormePlace.addEventListener('submit', function (evt) {
 
 	const cardItem = createCard(newCardAdd)
 
-	printCard(cardItem)
+	renderCard(cardItem)
 
-	clolsePopup(popupAddPlace);
+	closePopup(popupAddPlace);
 
-	  popupPlaceInput.value = 'Название'
-		popupLinkInput.value = 'Ссылка на кртинку'
+	popupPlaceInput.value = ''
+	popupLinkInput.value = ''
 
 });
 
-// Функция закрытия клик вне области попап 1
-function onOverLayClick(event) {
 
+function handleOverlayClick(event) {
 	if (event.target === event.currentTarget) {
-
-		clolsePopup(popupEditProfile);
-		
+		closePopup(event.currentTarget);
 	}
-
 }
-popupEditProfile.addEventListener('click', onOverLayClick);
-
-// Функция закрытия клик вне области попап 2
-function onOverLayAdd(event) {
-
-	if (event.target === event.currentTarget) {
-
-		clolsePopup(popupAddPlace);
-		
-	}
-
-}
-popupAddPlace.addEventListener('click', onOverLayAdd);
-
-// Функция закрытия клик вне области попап 3
-function onOverLayImage(event) {
-
-	if (event.target === event.currentTarget) {
-
-		clolsePopup(popupShowImg);
-		
-	}
-
-}
-popupShowImg.addEventListener('click', onOverLayImage);
 
 
-// 34:18 подтягивает текст об ошибки инпута
-// 38:30 класс для инвалид и там же код
-// 41:05 Кнопка блакируется есл инпут инвалид
-// 48:58 Требование проектной работы
-//59
+
+popupEditProfile.addEventListener('click', handleOverlayClick);
 
 
-// Закрыть по ESC
-window.onkeydown = function( event ) {
-	if ( event.keyCode == 27 ) {
+popupAddPlace.addEventListener('click', handleOverlayClick);
 
-			clolsePopup(popupAddPlace)
-			clolsePopup(popupEditProfile)
-			clolsePopup(popupShowImg)
-		
-	}
 
-};
+popupShowImg.addEventListener('click', handleOverlayClick);
+
+
+
+

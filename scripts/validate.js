@@ -25,20 +25,20 @@ const config = {
 
 const showInputError = (formElement, inputElement, errorMessage) => {
 
-	 // Выбираем элемент ошибки внутри функции
+	// Выбираем элемент ошибки внутри функции
 	//на основе уникального класса из инпута по id уникальным классом из span:
 
 	console.log(formElement);
 
-const formError = formElement.querySelector(`.${inputElement.id}-error`);
+	const formError = formElement.querySelector(`.${inputElement.id}-error`);
 
-// Показываем красный бордер-ботом
-	 inputElement.classList.add(config.inputErrorClass);
+	// Показываем красный бордер-ботом
+	inputElement.classList.add(config.inputErrorClass);
 
-// Заменим содержимое span с ошибкой на переданный параметр
-	 formError.textContent = errorMessage;
+	// Заменим содержимое span с ошибкой на переданный параметр
+	formError.textContent = errorMessage;
 
-// Показываем сообщение об ошибке
+	// Показываем сообщение об ошибке
 	formError.classList.add(config.errorClassActive);
 };
 
@@ -46,68 +46,66 @@ const formError = formElement.querySelector(`.${inputElement.id}-error`);
 
 const hideInputError = (formElement, inputElement) => {
 
-	  // Удаляем элемент ошибки внутри функции
-	 //на основе уникального класса из инпута по id уникальным классом из span:
+	// Удаляем элемент ошибки внутри функции
+	//на основе уникального класса из инпута по id уникальным классом из span:
 	// Находим элемент ошибки
 
 	console.log(formElement)
 
-const formError = formElement.querySelector(`.${inputElement.id}-error`);
+	const formError = formElement.querySelector(`.${inputElement.id}-error`);
 
-	 // Удаляем красный бордер-ботом
-	 inputElement.classList.remove(config.inputErrorClass);
+	// Удаляем красный бордер-ботом
+	inputElement.classList.remove(config.inputErrorClass);
 
 	// Удаляет сообщение об ошибке validationMessage
 	formError.classList.remove(config.errorClassActive);
 
 	// Очистим ошибку
-  formError.textContent = '';
+	formError.textContent = '';
 
 };
 
-  // Функция которая проверяет валидность поля
- // Функция isValid принимает formElement и inputElement,
+// Функция которая проверяет валидность поля
+// Функция isValid принимает formElement и inputElement,
 // а не берёт их из внешней области видимости
-
-console.log(config);
 
 const isValid = (formElement, inputElement) => {
 
 	//Функция isValid принимает сразу два параметра:
- //formElement — html-элемент формы, в которой находится проверяемое поле ввода. Он нужен для поиска элемента ошибки в форме.
-//inputElement — проверяемое поле ввода.
+	//formElement — html-элемент формы, в которой находится проверяемое поле ввода. Он нужен для поиска элемента ошибки в форме.
+	//inputElement — проверяемое поле ввода.
 
 	// Если поле не проходит валидацию, покажем ошибку
-	if(!inputElement.validity.valid) {
+	if (!inputElement.validity.valid) {
 
-	 // Передадим сообщение об ошибке
-	// showInputError получает параметром форму, в которой
- // находится проверяемое поле, и само это поле
+		// Передадим сообщение об ошибке
+		// showInputError получает параметром форму, в которой
+		// находится проверяемое поле, и само это поле
 		showInputError(formElement, inputElement, inputElement.validationMessage);
 
-	 // Если проходит, скроем
-	// hideInputError получает параметром форму, в которой
- // находится проверяемое поле, и само это поле
+		// Если проходит, скроем
+		// hideInputError получает параметром форму, в которой
+		// находится проверяемое поле, и само это поле
 	} else {
 
 		hideInputError(formElement, inputElement);
 
 	}
-	
+
 };
 
 
 // Функция принимает массив полей и проверяет true or falce
 
-const hasInvalidInput =(inputList) => {
+const hasInvalidInput = (inputList) => {
 
 	// проходим по этому массиву методом some
 
 	return inputList.some((inputElement) => {
 
-		  // Если поле не валидно, обход массива прекратится и вся функция hasInvalidInput вернёт true
-			
-	return !inputElement.validity.valid;
+		// Если поле не валидно, обход массива прекратится и вся функция hasInvalidInput вернёт true
+
+		return !inputElement.validity.valid;
 
 	})
 
@@ -141,21 +139,21 @@ const toggleButtonState = (inputList, buttonElement) => {
 
 };
 
-  // Добавление обработчиков всем полям формы
- // Функция setEventListeners - добавить слушатель событий  всем полям ввода внутри формы
+// Добавление обработчиков всем полям формы
+// Функция setEventListeners - добавить слушатель событий  всем полям ввода внутри формы
 //isValid на каждый ввод символа
 
 function setEventListeners(formElement) {
 	// Находим все поля внутри формы,
 	// сделаем из них массив методом Array.from
 
-	const inputList = Array.from(formElement.querySelectorAll(config.inputElement)); 
+	const inputList = Array.from(formElement.querySelectorAll(config.inputElement));
 
 	// Найдём в текущей форме кнопку отправки
 	const buttonElement = formElement.querySelector(config.popupSubmitButton);
 
-	// Вызовем toggleButtonState, чтобы не ждать ввода данных в поля (не понятно, нужна или нет по ТЗ)
-  // toggleButtonState(inputList, buttonElement);
+	// Вызовем toggleButtonState, чтобы не ждать ввода данных в поля и кнопка была не активна сразу
+	toggleButtonState(inputList, buttonElement);
 
 
 	// Обойдём все элементы полученной коллекции
@@ -195,7 +193,7 @@ function enableValidation() {
 
 		});
 
-		
+
 		// Для каждой формы вызовем функцию setEventListeners,
 		// передав ей элемент формы
 		setEventListeners(formElement);
