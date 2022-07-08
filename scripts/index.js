@@ -29,6 +29,8 @@ const popupLinkInput = document.querySelector('.popup__field-name_input_link');
 
 const popupFormePlace = document.querySelector('.popup__form-place');
 
+const popUpsubmitButton = popupAddPlace.querySelector('.popup__submit-button')
+
 // Третий попап
 const popupShowImg = document.querySelector('.popup-show-img');
 
@@ -37,9 +39,6 @@ const imagePopupPic = popupShowImg.querySelector('.popup__image-pic');
 const imagePopupTitle = popupShowImg.querySelector('.popup__image-title');
 
 const popupImgCloseBtn = popupShowImg.querySelector('.popup__close-icon');
-
-
-
 
 
 // Работа с карточками
@@ -82,8 +81,6 @@ function closePopup(popupItem) {
 	document.removeEventListener('keyup', closeByEscape);
 
 };
-
-
 
 
 //Клик по кнопке popupBtnPen
@@ -215,8 +212,6 @@ function toggleLike(heartIcon) {
 }
 
 
-
-
 // Функция удаления карточек
 function deleteCard(trashCard) {
 	trashCard.remove();
@@ -265,6 +260,7 @@ popupFormePlace.addEventListener('submit', function (evt) {
 	newCardAdd = {
 
 		name: popupPlaceInput.value,
+
 		link: popupLinkInput.value
 
 	}
@@ -275,8 +271,16 @@ popupFormePlace.addEventListener('submit', function (evt) {
 
 	closePopup(popupAddPlace);
 
+	console.log(config.popupSubmitButton)
+
+	popUpsubmitButton.classList.add(config.inactiveButtonClass);
+
+	popUpsubmitButton.setAttribute("disabled", true);
+
 	popupPlaceInput.value = ''
+
 	popupLinkInput.value = ''
+
 
 });
 
@@ -286,7 +290,6 @@ function handleOverlayClick(event) {
 		closePopup(event.currentTarget);
 	}
 }
-
 
 
 popupEditProfile.addEventListener('click', handleOverlayClick);
