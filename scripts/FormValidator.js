@@ -16,28 +16,8 @@ export class FormValidator {
 	//Добавление обработчиков всем формам
 
 	enableValidation() {
-		// Найдём все формы с указанным классом в DOM,
-		// сделаем из них массив методом Array.from
 
-		const formList = Array.from(document.querySelectorAll(this._formElement));
-
-		// console.log(formList);
-		// Переберём полученную коллекцию
-		formList.forEach((formElement) => {
-
-			formElement.addEventListener('submit', (evt) => {
-
-				// У каждой формы отменим стандартное поведение
-				evt.preventDefault();
-
-			});
-
-
-			// Для каждой формы вызовем функцию setEventListeners,
-			// передав ей элемент формы
-			this._setEventListeners(this._element);
-
-		});
+			this._setEventListeners();
 
 	}
 
@@ -51,7 +31,7 @@ export class FormValidator {
 		// Выбираем элемент ошибки внутри функции
 		//на основе уникального класса из инпута по id уникальным классом из span:
 
-		const formError = formElement.querySelector(`.${inputElement.id}-error`);
+		const formError = this._element.querySelector(`.${inputElement.id}-error`);
 
 		// Показываем красный бордер-ботом
 		inputElement.classList.add(this._inputErrorClass);
@@ -71,7 +51,7 @@ export class FormValidator {
 		//на основе уникального класса из инпута по id уникальным классом из span:
 		// Находим элемент ошибки
 
-		const formError = formElement.querySelector(`.${inputElement.id}-error`);
+		const formError = this._element.querySelector(`.${inputElement.id}-error`);
 
 		// Удаляем красный бордер-ботом
 		inputElement.classList.remove(this._inputErrorClass);
@@ -100,19 +80,18 @@ export class FormValidator {
 			// Передадим сообщение об ошибке
 			// showInputError получает параметром форму, в которой
 			// находится проверяемое поле, и само это поле
-			this._showInputError(formElement, inputElement, inputElement.validationMessage);
+			this._showInputError(this._formElement, inputElement, inputElement.validationMessage);
 
 			// Если проходит, скроем
 			// hideInputError получает параметром форму, в которой
 			// находится проверяемое поле, и само это поле
 		} else {
 
-			this._hideInputError(formElement, inputElement);
+			this._hideInputError(this._formElement, inputElement);
 
 		}
 
 	};
-
 
 	// Функция принимает массив полей и проверяет true or falce
 
@@ -127,6 +106,19 @@ export class FormValidator {
 			return !inputElement.validity.valid;
 
 		})
+
+	};
+
+
+  _clearInpytsOnsubmit = (inputList) => {
+
+
+
+		inputList.forEach((inputElement) => {
+
+    inputElement.value = '';
+		})
+		
 
 	};
 
@@ -162,14 +154,14 @@ export class FormValidator {
 	// Функция setEventListeners - добавить слушатель событий  всем полям ввода внутри формы
 	//isValid на каждый ввод символа
 
-	_setEventListeners(formElement) {
+	_setEventListeners() {
 		// Находим все поля внутри формы,
 		// сделаем из них массив методом Array.from
 
-		const inputList = Array.from(formElement.querySelectorAll(this._inputElement));
+		const inputList = Array.from(this._element.querySelectorAll(this._inputElement));
 
 		// Найдём в текущей форме кнопку отправки
-		const buttonElement = formElement.querySelector(this._popupSubmitButton);
+		const buttonElement = this._element.querySelector(this._popupSubmitButton);
 
 		// Вызовем toggleButtonState, чтобы не ждать ввода данных в поля и кнопка была не активна сразу
 		this._toggleButtonState(inputList, buttonElement);
@@ -183,7 +175,7 @@ export class FormValidator {
 				// Внутри колбэка вызовем isValid,
 				// передав ей форму и проверяемый элемент
 
-				this._isValid(formElement, inputElement);
+				this._isValid(this._formElement, inputElement);
 
 				// Вызовем toggleButtonState и передадим ей массив полей и кнопку
 				this._toggleButtonState(inputList, buttonElement);

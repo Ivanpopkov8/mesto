@@ -1,22 +1,23 @@
 
 // Третий попап
-const popupShowImg = document.querySelector('.popup-show-img');
+export const popupShowImg = document.querySelector('.popup-show-img');
 
 const imagePopupPic = popupShowImg.querySelector('.popup__image-pic');
 
 const imagePopupTitle = popupShowImg.querySelector('.popup__image-title');
 
-const popupImgCloseBtn = popupShowImg.querySelector('.popup__close-icon');
+
 
 
 
 export class Card {
-	constructor(data, cardSelector) {
+	constructor(data, cardSelector, openForm) {
 
 		// Тянетс с индекса.жс с объекта 
 		this._name = data.name;
 		this._link = data.link;
 		this._cardSelector = cardSelector;
+    this._openForm = openForm;
 	}
 
 // Копирует весь хтмл одной карточки и возвращает
@@ -34,11 +35,17 @@ export class Card {
  
 	generateCard() {
 		this._element = this._getTemplate();
+
+		this._cardImage = this._element.querySelector('.element__image')
+		this._likeButton = this._element.querySelector('.element__vector')
+		this._treshBasket = this._element.querySelector('.element__basket')
+    
+
 		this._setEventListeners(); // вызовите _setEventListeners
 
 		this._element.querySelector('.element__title').textContent = this._name;
-		this._element.querySelector('.element__image').src = this._link;
-		this._element.querySelector('.element__image').alt = this._name;
+		this._cardImage.src = this._link;
+		this._cardImage.alt = this._name;
 
 		return this._element;
 	}
@@ -47,20 +54,22 @@ export class Card {
 
 	_handleOpenPopup() {
 		imagePopupPic.src = this._link;
-		popupShowImg.classList.add('popup_is-active');
+
+		this._openForm(popupShowImg);
+		
 		imagePopupTitle.textContent = this._name;
 	}
 
-	// Закрывает и отчищвет попап 
-	_handleClosePopup() {
-		imagePopupPic.src = '';
-		popupShowImg.classList.remove('popup_is-active');
-		imagePopupTitle.textContent = '';
-	}
+	// // Закрывает и отчищвет попап 
+	// _handleClosePopup() {
+	// 	imagePopupPic.src = '';
+	// 	popupShowImg.classList.remove('popup_is-active');
+	// 	imagePopupTitle.textContent = '';
+	// }
 
 	_handleHeartActive() {
 
-		this._element.querySelector('.element__vector').classList.toggle('element__vector_active');
+		this._likeButton.classList.toggle('element__vector_active');
 	}
 
 	_handleCardDelete() {
@@ -69,19 +78,15 @@ export class Card {
 
 	_setEventListeners() {
 
-		this._element.querySelector('.element__image').addEventListener('click', () => {
+		this._cardImage.addEventListener('click', () => {
 			this._handleOpenPopup()
 		});
 
-		popupImgCloseBtn.addEventListener('click', () => {
-			this._handleClosePopup()
-		});
-
-		this._element.querySelector('.element__vector').addEventListener('click', () => {
+		this._likeButton.addEventListener('click', () => {
 			this._handleHeartActive()
 		});
 
-		this._element.querySelector('.element__basket').addEventListener('click', () => {
+		this._treshBasket.addEventListener('click', () => {
 			this._handleCardDelete()
 		});
 
