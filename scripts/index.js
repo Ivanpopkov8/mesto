@@ -169,17 +169,17 @@ const initialCards = [
 
 function createCard(item) {
 	const card = new Card(item, '#element-template', openPopup);
-  const cardElement = card.generateCard();
+	const cardElement = card.generateCard();
 
-return cardElement
+	return cardElement
 }
 
 
 function renderInitialCards() {
 	initialCards.forEach((item) => {
 
-  const cardElement = createCard(item)
-		
+		const cardElement = createCard(item)
+
 
 		// Добавляем в DOM
 		cardList.append(cardElement);
@@ -187,14 +187,6 @@ function renderInitialCards() {
 }
 
 renderInitialCards();
-
-
-
-// Функция крестик закрывает картинку
-// popupImgCloseBtn.addEventListener('click', function () {
-
-// 	closePopup(popupShowImg);
-// })
 
 addButtonPlace.addEventListener('click', function () {
 
@@ -230,31 +222,14 @@ popupFormePlace.addEventListener('submit', function (evt) {
 	// Добавляем в DOM
 	cardList.prepend(cardElement);
 
-	
+	formValidatePlace.clearInpytsOnsubmit();
 
-
-	// popUpsubmitButton.classList.add(config.inactiveButtonClass);
-
-	// popUpsubmitButton.setAttribute("disabled", true);
-
-	// popupPlaceInput.value = ''
-
-	// popupLinkInput.value = ''
-	const inputList = Array.from(popupAddPlace.querySelectorAll(config.inputElement));
-
-
-
-	const formValidatePlace = new FormValidator(config, popupAddPlace);
-
-	formValidatePlace._clearInpytsOnsubmit(inputList);
-
-  formValidatePlace._toggleButtonState(inputList, popUpsubmitButton);
+	formValidatePlace.toggleButtonState();
 
 	closePopup(popupAddPlace);
 
 
 });
-
 
 function handleOverlayClick(event) {
 	if (event.target === event.currentTarget) {
@@ -262,16 +237,11 @@ function handleOverlayClick(event) {
 	}
 }
 
-
 popupEditProfile.addEventListener('click', handleOverlayClick);
-
 
 popupAddPlace.addEventListener('click', handleOverlayClick);
 
-
 popupShowImg.addEventListener('click', handleOverlayClick);
-
-
 
 
 const formValidateProfile = new FormValidator(config, popupEditProfile);

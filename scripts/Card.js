@@ -7,9 +7,6 @@ const imagePopupPic = popupShowImg.querySelector('.popup__image-pic');
 const imagePopupTitle = popupShowImg.querySelector('.popup__image-title');
 
 
-
-
-
 export class Card {
 	constructor(data, cardSelector, openForm) {
 
@@ -17,10 +14,10 @@ export class Card {
 		this._name = data.name;
 		this._link = data.link;
 		this._cardSelector = cardSelector;
-    this._openForm = openForm;
+		this._openForm = openForm;
 	}
 
-// Копирует весь хтмл одной карточки и возвращает
+	// Копирует весь хтмл одной карточки и возвращает
 	_getTemplate() {
 		const cardElement = document
 			.querySelector(this._cardSelector)
@@ -31,15 +28,15 @@ export class Card {
 		return cardElement;
 	}
 
- // Заполняет данные карточки
- 
+	// Заполняет данные карточки
+
 	generateCard() {
 		this._element = this._getTemplate();
 
 		this._cardImage = this._element.querySelector('.element__image')
 		this._likeButton = this._element.querySelector('.element__vector')
 		this._treshBasket = this._element.querySelector('.element__basket')
-    
+
 
 		this._setEventListeners(); // вызовите _setEventListeners
 
@@ -55,8 +52,10 @@ export class Card {
 	_handleOpenPopup() {
 		imagePopupPic.src = this._link;
 
+		imagePopupPic.alt = this._name;
+
 		this._openForm(popupShowImg);
-		
+
 		imagePopupTitle.textContent = this._name;
 	}
 
